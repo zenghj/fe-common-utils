@@ -1,0 +1,41 @@
+{
+  "name": "@zenghj/fe-common-utils",
+  "version": "0.0.1",
+  "description": "some front-end common utils",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "yarn watch",
+    "type-check": "tsc --noEmit",
+    "build": "tsc",
+    "build:types": "tsc --emitDeclarationOnly",
+    "watch": "tsc --watch",
+    "doc": "typedoc --tsconfig tsconfig.json --out docs src",
+    "prerelease": "yarn test:coverage",
+    "release": "yarn doc",
+    "publish": "npm publish",
+    "prebuild": "echo false > .buildstatus",
+    "postbuild": "echo true > .buildstatus",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sa-sdk-javascript": "^1.14.15"
+  },
+  "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.3.7",
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typedoc": "^0.15.3",
+    "typescript": "^3.7.3"
+  },
+  "author": "zenghj<zenghj@outlook.com>",
+  "homepage": "https://github.com/zenghj/fe-common-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenghj/fe-common-utils.git"
+  }
+}

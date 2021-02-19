@@ -1,0 +1,22 @@
+{
+  "allowSyntheticDefaultImports": true,
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    // Error: Option '--resolveJsonModule' cannot be specified without 'node' module resolution strategy.
+    // "resolveJsonModule": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "module": "commonjs",
+    "lib": [
+      "DOM",
+      "ES5",
+      "ScriptHost",
+      "ES6",
+      "DOM.Iterable"
+    ]
+  },
+  "include": [
+    "src",
+  ]
+}
