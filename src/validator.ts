@@ -5,6 +5,8 @@ export class Validator {
 }
 
 export class ValidateResult {
+  msg: string;
+  valid: Boolean;
   constructor ({ msg, valid }) {
     this.msg = msg
     this.valid = valid

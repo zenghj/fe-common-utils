@@ -1,5 +1,6 @@
-import { Types } from '@/utils/lang'
+import Types from './types';
 export default class Queue {
+  list: any[];
   constructor (list) {
     this.list = Types.isArray(list) ? list : []
   }
