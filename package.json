@@ -1,6 +1,6 @@
 {
   "name": "@zenghj/fe-common-utils",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "some front-end common utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "doc": "typedoc --tsconfig tsconfig.json --out docs src",
     "prerelease": "yarn test:coverage",
     "release": "yarn doc",
-    "publish": "npm publish",
+    "pub": "yarn run build && npm publish",
     "prebuild": "echo false > .buildstatus",
     "postbuild": "echo true > .buildstatus",
     "test": "jest",

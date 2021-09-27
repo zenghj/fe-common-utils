@@ -61,33 +61,51 @@ export default class StorageManager {
    * @param {any} value 能够正确json化的任意类型
    */
   setItem(key, value) {
-    localStorage.setItem(this.getRealKey(key), JSON.stringify(value))
+    try {
+      localStorage.setItem(this.getRealKey(key), JSON.stringify(value))
+    } catch (e) {
+      console.warn(e)
+    }
   }
   /**
    * 取
    * @param {string} key
    */
   getItem(key) {
-    let data = localStorage.getItem(this.getRealKey(key))
-    return data ? JSON.parse(data) : data
+    try {
+      let data = localStorage.getItem(this.getRealKey(key))
+      return data ? JSON.parse(data) : data
+    } catch (e) {
+      console.warn(e)
+      return null;
+    }
+
   }
   /**
    * 删单个
    * @param {string} key
    */
   removeItem(key) {
-    return localStorage.removeItem(this.getRealKey(key))
+    try {
+      return localStorage.removeItem(this.getRealKey(key))
+    } catch (e) {
+      console.warn(e)
+    }
   }
   /**
    * 删当前应用的所有缓存
    */
   clear() {
-    let len = localStorage.length
-    for (let i = 0; i < len; i++) {
-      let key:string = localStorage.key(i)
-      if (key && key.startsWith && key.startsWith(`${this.appName}_`)) {
-        localStorage.removeItem(key)
+    try {
+      let len = localStorage.length
+      for (let i = 0; i < len; i++) {
+        let key:string = localStorage.key(i)
+        if (key && key.startsWith && key.startsWith(`${this.appName}_`)) {
+          localStorage.removeItem(key)
+        }
       }
+    } catch (e) {
+      console.warn(e)
     }
   }
   /**

@@ -73,33 +73,54 @@ var StorageManager = /** @class */ (function () {
      * @param {any} value 能够正确json化的任意类型
      */
     StorageManager.prototype.setItem = function (key, value) {
-        localStorage.setItem(this.getRealKey(key), JSON.stringify(value));
+        try {
+            localStorage.setItem(this.getRealKey(key), JSON.stringify(value));
+        }
+        catch (e) {
+            console.warn(e);
+        }
     };
     /**
      * 取
      * @param {string} key
      */
     StorageManager.prototype.getItem = function (key) {
-        var data = localStorage.getItem(this.getRealKey(key));
-        return data ? JSON.parse(data) : data;
+        try {
+            var data = localStorage.getItem(this.getRealKey(key));
+            return data ? JSON.parse(data) : data;
+        }
+        catch (e) {
+            console.warn(e);
+            return null;
+        }
     };
     /**
      * 删单个
      * @param {string} key
      */
     StorageManager.prototype.removeItem = function (key) {
-        return localStorage.removeItem(this.getRealKey(key));
+        try {
+            return localStorage.removeItem(this.getRealKey(key));
+        }
+        catch (e) {
+            console.warn(e);
+        }
     };
     /**
      * 删当前应用的所有缓存
      */
     StorageManager.prototype.clear = function () {
-        var len = localStorage.length;
-        for (var i = 0; i < len; i++) {
-            var key = localStorage.key(i);
-            if (key && key.startsWith && key.startsWith(this.appName + "_")) {
-                localStorage.removeItem(key);
+        try {
+            var len = localStorage.length;
+            for (var i = 0; i < len; i++) {
+                var key = localStorage.key(i);
+                if (key && key.startsWith && key.startsWith(this.appName + "_")) {
+                    localStorage.removeItem(key);
+                }
             }
+        }
+        catch (e) {
+            console.warn(e);
         }
     };
     /**
