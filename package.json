@@ -1,6 +1,6 @@
 {
   "name": "@zenghj/fe-common-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "some front-end common utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

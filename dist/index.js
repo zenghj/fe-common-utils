@@ -28,4 +28,14 @@ var user_duration_manager_class_1 = require("./user-duration-manager-class");
 exports.UserDurationLogManager = user_duration_manager_class_1.default;
 var uuid_1 = require("./uuid");
 exports.uuidGenerotor = uuid_1.default;
+var memory_1 = require("./memory");
+exports.memory = memory_1.default;
+var omit_1 = require("./omit");
+exports.omit = omit_1.default;
+var queue_1 = require("./queue");
+exports.Queue = queue_1.default;
+var time_1 = require("./time");
+exports.timestamp2Date = time_1.timestamp2Date;
+exports.formateDateStr = time_1.formateDateStr;
+exports.formateDuration = time_1.formateDuration;
 // console.warn('You have import total i5-common-utils, are you sure you are aware of it.')

@@ -12,3 +12,7 @@ export { default as timeout } from './timeout-fn';
 export { default as Types } from './types';
 export { default as UserDurationLogManager } from './user-duration-manager-class';
 export { default as uuidGenerotor } from './uuid';
+export { default as memory } from './memory';
+export { default as omit } from './omit';
+export { default as Queue } from './queue';
+export { timestamp2Date, formateDateStr, formateDuration } from './time';

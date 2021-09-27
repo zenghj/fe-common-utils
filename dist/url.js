@@ -25,9 +25,15 @@ function parseSearch(search) {
             var searches = search.split('&');
             for (var i = 0; i < searches.length; i++) {
                 paramItem = searches[i] || '';
-                paramItem = paramItem.split('=');
-                if (paramItem[0]) {
-                    params[paramItem[0]] = decodeURIComponent(paramItem[1] || '');
+                // paramItem = paramItem.split('=')
+                // if (paramItem[0]) {
+                //   params[paramItem[0]] = decodeURIComponent(paramItem[1] || '')
+                // }
+                var index = paramItem.indexOf('=');
+                if (index > 0) {
+                    var key = paramItem.slice(0, index);
+                    var value = decodeURIComponent(paramItem.slice(index + 1) || '');
+                    params[key] = value;
                 }
             }
             return params;
